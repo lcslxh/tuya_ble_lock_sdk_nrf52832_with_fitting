@@ -1138,7 +1138,7 @@ static uint32_t open_with_master_handler(void* cmd_dp_data, void* rsp_dp_data, u
                 open_record_rsp.masterid = rsp->slaveid;
                 open_record_rsp.slaveid = rsp->masterid;
                 open_record_rsp.timestamp = cmd->timestamp;
-                lock_open_record_report_common_with_delay(OR_LOG_OPEN_WITH_COMMON, (void*)&open_record_rsp, g_cmd.dp_data_len);
+                lock_open_record_report_common(OR_LOG_OPEN_WITH_COMMON, (void*)&open_record_rsp, g_cmd.dp_data_len);
             }
             rsp->result = 0x00;
         } else {

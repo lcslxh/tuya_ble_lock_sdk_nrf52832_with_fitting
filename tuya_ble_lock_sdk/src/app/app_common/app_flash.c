@@ -476,7 +476,7 @@ FN: evt = event = open lock + alarm
 */
 uint32_t lock_evt_save(uint32_t timestamp, uint8_t *data, uint32_t len)
 {
-    if(app_port_get_connect_status() != BONDING_CONN)
+    if((app_port_get_connect_status() != BONDING_CONN) || (g_current_master_id != 0xFFFF))
     {
         uint8_t buf[256];
         

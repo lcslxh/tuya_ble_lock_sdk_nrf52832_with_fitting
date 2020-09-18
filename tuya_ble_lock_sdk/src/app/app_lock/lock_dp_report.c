@@ -210,7 +210,7 @@ uint32_t lock_open_record_report_common(uint8_t dp_id, uint8_t* dp_data, uint32_
 //    lock_evt_save(timestamp, (void*)&g_rsp, (3 + g_rsp.dp_data_len));
     lock_evt_save(timestamp, (void*)&g_rsp, (OFFLINE_RECORD_LEN));
     
-    if(g_current_master_id == 0xFFFF) {
+    if(g_current_master_id != 0xFFFF) {
         return APP_PORT_ERROR_COMMON;
     }
     
